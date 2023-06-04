@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+</head>
+<body>
+<a th:href="@{/test}">back to listEmployee</a>
+<div id="form">
+    <form action="#" th:action="@{/test/save}" th:method="POST"
+          th:object="${employee}" novalidate="novalidate">
+        <input type="hidden" th:field="*{id}"/>
+        <div>
+            <label>Name</label>
+            <label><input type="text" th:field="*{name}"></label>
+        </div>
+        <div>
+            <label>Age</label>
+            <label><input type="number" th:field="*{age}"></label>
+        </div>
+        <div>
+            <label>Email</label>
+            <label><input type="text" th:field="*{email}"></label>
+        </div>
+        <div>
+            <label>Salary</label>
+            <label><input type="number" th:field="*{salary}"></label>
+        </div>
+        <div>
+            <label>Address</label>
+            <label><input type="number" th:field="*{address}"></label>
+        </div>
+        <div>
+            <input type="submit" value="Save">
+        </div>
+
+    </form>
+</div>
+</body>
+</html>

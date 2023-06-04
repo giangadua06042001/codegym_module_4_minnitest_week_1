@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>View Customer</h3>
+<p>
+    <a th:href="@{/test}">
+        Back to employee list
+    </a>
+</p>
+<div id="detail">
+    <div class="cusdetail">
+        <label>Name:</label>
+        <label th:text="${employ.name}"></label>
+    </div>
+     <div>
+        <label>Age:</label>
+        <label th:text="${employ.age}"></label>
+    </div>
+     <div>
+        <label>Email:</label>
+        <label th:text="${employ.email}"></label>
+    </div>
+
+    <div >
+        <label>Salary:</label>
+        <label th:text="${employ.salary}"></label>
+    </div>
+    <div>
+        <label>Address:</label>
+        <label th:text="${employ.address}"></label>
+    </div>
+</div>
+
+</body>
+</html>

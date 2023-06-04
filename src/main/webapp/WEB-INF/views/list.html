@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ListEmployee</title>
+</head>
+<body>
+<a th:href="@{/test/create}">Add new Employee</a>
+<h3>List Employees</h3>
+<table id = "customers" border="1">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>email</th>
+        <th>salary</th>
+        <th>address</th>
+        <th>Edit</th>
+        <th>delete</th>
+        <th>View</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="row,rowStat : ${employee}">
+        <td th:text="${row.getName()}"></td>
+        <td th:text="${row.getAge()}"></td>
+        <td th:text="${row.getEmail()}"></td>
+        <td th:text="${row.getSalary()}"></td>
+        <td th:text="${row.getAddress()}"></td>
+        <td><a th:href="@{/test/{id}/edit(id=${row.getId()})}">edit</a></td>
+        <td><a th:href="@{/test/{id}/delete(id=${row.getId()})}">delete</a></td>
+        <td><a th:href="@{/test/{id}/view(id=${row.getId()})}">view</a></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
